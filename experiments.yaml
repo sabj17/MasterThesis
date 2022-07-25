@@ -1,0 +1,29 @@
+Baseline:
+    dataset:
+        type: tueeg # bci4, tueeg, p300-1, p300-2, physionet
+        batch_size: 256
+        num_workers: 4
+        n_subjects: 300
+    pretrain_steps: 12000
+    finetune_steps: 5000
+    framework:
+        type: fullbert # "data2vec" : D2V, "subjectd2v", "subject-token-d2v-1", "subject-token-d2v-2", "subject-input", "byol", "simclr", "bert"
+        parameters:
+            beta: 1.0
+            min_tau: 0.99
+            max_tau: 0.99
+            tau_steps: 1
+            k: 3
+            patch_size: 16
+    embed_size: 512
+---
+Experiments:
+    - Experiment1:
+          name: Embedsize-128
+          embed_size: 128
+    - Experiment1:
+          name: Embedsize-256
+          embed_size: 256
+    - Experiment1:
+          name: Embedsize-512
+          embed_size: 512

@@ -1,0 +1,8 @@
+moabb
+braindecode
+torch
+tqdm
+pytorch_lightning
+einops
+wandb
+torchvision
